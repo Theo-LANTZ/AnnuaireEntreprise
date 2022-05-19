@@ -1,0 +1,43 @@
+<div class="list row">
+    <div class="col-md-8">
+        <div class="input-group mb-3">
+            <input type="text"
+            class="form-control"
+            placeholder="Search by name"
+            [(ngModel)]="nom" />
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" (click)="searchByName()">
+                    Rechercher
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <h4>Liste des Annuaires</h4>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let annuaire of annuaires; let i = index" [class.active]="i == currentIndex" (click)="setActiveAnnuaire(annuaire, i)">
+                {{annuaire.nom}}
+            </li>
+        </ul>
+        <button class="m-3 btn btn-sm btn-danger" (click)="removeAllAnnuaires()">Tout supprimer</button>
+    </div>
+    <div class="col-md-6">
+        <div *ngIf="currentAnnuaire.id">
+            <h4>Annuaire</h4>
+            <div>
+                <label><strong>Nom: </strong></label> {{currentAnnuaire.nom}}
+            </div>
+            <div>
+                <label><strong>Prenom:</strong></label> {{currentAnnuaire.prenom}}
+            </div>
+            <div>
+                <label><strong>Adresse Mail:</strong></label> {{currentAnnuaire.adressemail}}
+            </div>
+            <a class="badge badge-warning" routerLink="/annuaires/{{currentAnnuaire.id}}">Modifier</a>
+        </div>
+        <div *ngIf="!currentAnnuaire">
+            <br />
+            <p>Cliquez sur le nom d'une personne dans l'annuaire..</p>
+        </div>
+    </div>
+</div>

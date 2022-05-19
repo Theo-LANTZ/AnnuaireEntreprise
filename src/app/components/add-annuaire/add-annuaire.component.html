@@ -1,0 +1,38 @@
+<div>
+    <div class="submit-form">
+        <div *ngIf="!submitted">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="annuaire.nom" name="nom" />
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prenom</label>
+                <input type="text" class="form-control" id="nickname" required [(ngModel)]="annuaire.prenom"
+                    name="prenom" />
+            </div>
+            <div class="form-group">
+                <label for="login">login</label>
+                <input type="text" class="form-control" id="login" required [(ngModel)]="annuaire.login" name="login" />
+            </div>
+            <div class="form-group">
+                <label for="mdp">Mot de passe</label>
+                <input type="text" class="form-control" id="mdp" required [(ngModel)]="annuaire.password" name="mdp" />
+            </div>
+            <div class="form-group">
+                <label for="email">adresse mail</label>
+                <input type="text" class="form-control" id="mail" required [(ngModel)]="annuaire.adressemail"
+                    name="email" />
+            </div>
+            <div class="form-group">
+                <label for="date">Date d'arrivée</label>
+                <input type="text" class="form-control" id="date" required [(ngModel)]="annuaire.date_arrive"
+                    name="date" />
+            </div>
+            <div (click)="saveAnnuaire()" class="btn btn-success">Créer</div>
+        </div>
+        <div *ngIf="submitted">
+            <h4>L'annuaire a bien été créé</h4>
+            <button class="btn btn-success" (click)="newAnnuaire()">Ajouter un annuaire</button>
+        </div>
+    </div>
+</div>
