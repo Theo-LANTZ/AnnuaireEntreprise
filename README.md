@@ -1,6 +1,7 @@
 ## Development server
 
-Pour executer l'application il vous suffit de télécharger le code en .zip de l'extraire et de lancer le serveur en l'éxecutant en utilisant ``ng serve --port 8081``
+Pour executer l'application il vous suffit de télécharger le code en .zip de l'extraire et de lancer le serveur en l'éxecutant
+en utilisant ``ng serve --port 8081``
 
 # Prerequis d'installation
 
